@@ -815,8 +815,8 @@ void EmitCSyms::emitSymImp() {
     closeSplit();
 
     if (v3Global.dpi()) {
-        m_ofpBase->puts("// Setup export functions\n");
-        m_ofpBase->puts("for (int __Vfinal=0; __Vfinal<2; __Vfinal++) {\n");
+        puts("// Setup export functions\n");
+        puts("for (int __Vfinal=0; __Vfinal<2; __Vfinal++) {\n");
         for (auto it = m_scopeFuncs.begin(); it != m_scopeFuncs.end(); ++it) {
             AstScopeName* const scopep = it->second.m_scopep;
             AstCFunc* const funcp = it->second.m_cfuncp;
@@ -918,10 +918,10 @@ void EmitCSyms::emitSymImp() {
             puts(");\n");
             ++m_numStmts;
         }
-        m_ofpBase->puts("}\n");
+        puts("}\n");
     }
 
-    m_ofpBase->puts("}\n");
+    puts("}\n");
 
     if (v3Global.needTraceDumper()) {
         if (!optSystemC()) {
